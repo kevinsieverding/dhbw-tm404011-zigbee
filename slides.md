@@ -76,6 +76,20 @@ date: 2021-10-29
 
 <p class="stretch"><img src="img/eed12026a7128609997e4bde24ecc0ce.png" alt="IKEA Tradfri Fernbedienung" /></p>
 
+# Netzwerktypen
+
+## Beacon-Netzwerk
+
+- Regelmäßige "Beacons" (Heartbeat) Nachrichten vom Koordinator
+- Zur Synchronisation des Netzwerks
+- Um einen Überblick über die Devices im Netzwerk zu erhalten
+
+## Non-Beacon-Netzwerk
+
+- Keine regelmäßigen "Beacons"
+- Ressourcensparender
+- Geräte verbinden sich mit dem Netzwerk, wenn sie tatsächlich etwas senden müssen
+
 # Beispiel: ZigBee Home Automation Netzwerk
 
 ##
