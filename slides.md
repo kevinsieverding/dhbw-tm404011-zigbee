@@ -80,4 +80,8 @@ date: 2021-10-29
 
 ##
 
+<p class="stretch"><img src="img/zigbee-devices.png" alt="ZigBee Home Automation Devices" /></p>
+
+##
+
 <p class="stretch"><img src="img/zigbee-network.png" alt="ZigBee Home Automation Netzwerk" /></p>
