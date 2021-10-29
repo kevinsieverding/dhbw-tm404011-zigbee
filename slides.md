@@ -37,7 +37,7 @@ date: 2021-10-29
 
 # Aufbau
 
-![zigbee-protocol-layers.png](img/zigbee-protocol-layers.png)
+<p class="stretch"><img src="img/zigbee-protocol-layers.png" alt="ZigBee Protokoll" /></p>
 
 # Gerätetypen
 
