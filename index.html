@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Kevin Sieverding">
+  <meta name="dcterms.date" content="2021-10-29">
+  <title>ZigBee</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">ZigBee</h1>
+  <p class="subtitle">Mobile Computing</p>
+  <p class="author">Kevin Sieverding</p>
+  <p class="date">2021-10-29</p>
+</section>
+
+<section id="überblick" class="title-slide slide level1"><h1>Überblick</h1><ul>
+<li>Nach <code>IEEE 802.15.4</code> standartisierte Funktechnologie</li>
+<li>Für Netzwerke mit mittlerer Reichweite und geringen Übertragungsraten</li>
+<li>Fokus liegt auf Energieeffizienz</li>
+</ul></section>
+<section id="einsatzgebiete" class="title-slide slide level1"><h1>Einsatzgebiete</h1><ul>
+<li>Sensornetzwerke
+<ul>
+<li>Güterüberwachung</li>
+<li>Gebäudeüberwachung</li>
+</ul></li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>Gebäudeautomatisierung
+<ul>
+<li>IKEA Tradfri</li>
+<li>Philips Hue</li>
+<li>etc.</li>
+</ul></li>
+</ul></section>
+<section id="fakten" class="title-slide slide level1"><h1>Fakten</h1><table>
+<tbody>
+<tr class="odd">
+<td>Standard</td>
+<td>IEEE 802.15.4</td>
+</tr>
+<tr class="even">
+<td>Frequenz</td>
+<td>2400 MHz, 868 MHz (Europa)</td>
+</tr>
+<tr class="odd">
+<td>Reichweite</td>
+<td>10–75 m</td>
+</tr>
+<tr class="even">
+<td>Übertragungsrate</td>
+<td>max. 250 kb/s</td>
+</tr>
+<tr class="odd">
+<td>Topologie</td>
+<td>Stern, Baum, Mesh</td>
+</tr>
+<tr class="even">
+<td>Stromverbrauch</td>
+<td>sehr gering</td>
+</tr>
+</tbody>
+</table></section>
+<section id="aufbau" class="title-slide slide level1"><h1>Aufbau</h1><p class="stretch">
+<img src="img/zigbee-protocol-layers.png" alt="ZigBee Protokoll" />
+</p></section>
+<section><section id="gerätetypen" class="title-slide slide level1"><h1>Gerätetypen</h1></section>
+<section id="koordinator" class="slide level2">
+<h2>Koordinator</h2>
+<ul>
+<li>Organisiert das Netzwerk
+<ul>
+<li>Routing-Tabellen</li>
+<li>Teilnehmer-Listen</li>
+</ul></li>
+<li>Nur einer pro Netzwerk</li>
+</ul>
+<div class="fragment">
+<p>→ Single Point of Failure</p>
+</div>
+</section>
+<section id="beispiel-koordinator" class="slide level2">
+<h2>Beispiel: Koordinator</h2>
+<p class="stretch">
+<img src="img/79da51468e6c93728072520fab182c6b.png" alt="ZigBee USB-Stick CC2531" />
+</p>
+</section>
+<section id="full-function-device" class="slide level2">
+<h2>Full Function Device</h2>
+<ul>
+<li>Kann Senden und Empfangen</li>
+<li>Agiert zusätzlich als Router</li>
+<li>Dient der Erweiterung des Netzwerks</li>
+<li>Können zusätzlich Steuerungsaufgaben übernehmen</li>
+</ul>
+</section>
+<section id="beispiel-full-function-device" class="slide level2">
+<h2>Beispiel: Full Function Device</h2>
+<p class="stretch">
+<img src="img/d8e07541263024fa02c9f7c015efc401.png" alt="OSRAM Smart+ Plug" />
+</p>
+</section>
+<section id="reduced-function-device" class="slide level2">
+<h2>Reduced Function Device</h2>
+<ul>
+<li>Kann Senden und Empfangen</li>
+<li>Kann keine Nachrichten weiterleiten</li>
+</ul>
+</section>
+<section id="beispiel-reduced-function-device" class="slide level2">
+<h2>Beispiel: Reduced Function Device</h2>
+<p class="stretch">
+<img src="img/eed12026a7128609997e4bde24ecc0ce.png" alt="IKEA Tradfri Fernbedienung" />
+</p>
+</section></section>
+<section><section id="beispiel-zigbee-home-automation-netzwerk" class="title-slide slide level1"><h1>Beispiel: ZigBee Home Automation Netzwerk</h1></section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p class="stretch">
+<img src="img/zigbee-devices.png" alt="ZigBee Home Automation Devices" />
+</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p class="stretch">
+<img src="img/zigbee-network.png" alt="ZigBee Home Automation Netzwerk" />
+</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
