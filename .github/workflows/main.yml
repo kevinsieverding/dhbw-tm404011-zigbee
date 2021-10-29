@@ -2,7 +2,7 @@ name: Build and Push
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - run: mkdir out
 
       - name: build
@@ -21,6 +21,7 @@ jobs:
             --slide-level=2
             -t revealjs
             --output=out/index.html
+            --self-contained
             slides.md
 
       - name: Deploy 🚀
