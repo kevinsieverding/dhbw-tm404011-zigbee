@@ -1,0 +1,10 @@
+- Frequenz: 868 MHz (EU), 2400
+- Lizenzfreier funkbereich
+- Standard: IEEE 802.15.4
+- Topologie: Stern, Baum, Mesh
+- Max: 250 kb/s
+- Max: 10-75m
+- Stromverbrauch: sehr gering
+- Anwendungsbereich: Sensornetze, Home Automation
+- Die Funkübertragung erfolgt mit DSSS (Direct Sequence Spread Spectrum)
+-
